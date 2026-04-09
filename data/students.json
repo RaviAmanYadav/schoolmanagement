@@ -1,0 +1,15 @@
+{
+    "admission_no": 1,
+    "roll_no": "4-1",
+    "name": "aman ",
+    "age": 23,
+    "std": "4",
+    "parent": {
+        "father_name": "rd",
+        "mother_name": "p"
+    },
+    "bus": {
+        "location": "near",
+        "fee": 500
+    }
+}
