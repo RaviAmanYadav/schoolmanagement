@@ -1,0 +1,32 @@
+[
+    {
+        "admission_no": 1,
+        "roll_no": "1-1",
+        "name": "aman",
+        "age": 3,
+        "std": "1",
+        "parent": {
+            "father_name": "r",
+            "mother_name": "p"
+        },
+        "bus": {
+            "location": "near",
+            "fee": 500
+        }
+    },
+    {
+        "admission_no": 2,
+        "roll_no": "8-1",
+        "name": "anchal",
+        "age": 12,
+        "std": "8",
+        "parent": {
+            "father_name": "Ramadhar yadav",
+            "mother_name": "Pushpa yadav"
+        },
+        "bus": {
+            "location": "mid",
+            "fee": 1000
+        }
+    }
+]

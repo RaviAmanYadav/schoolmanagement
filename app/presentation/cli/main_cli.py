@@ -3,23 +3,25 @@ from app.core.service.student_service import StudenetService
 
 
 def run():
-    storage = JSONStorage("data/students.json")
+    storage = JSONStorage("data/student.json")
     service = StudenetService(storage)
 
     while True:
-        print("\n1. Add Student\n2. Exit")
-        choice = input("Choice: ")
+        print("1. Add students")
+        print("2. Show all studentss")
+        print("3. Exit")
+        choice = int(input("Enter your choice => "))
 
-        if choice == "1":
-            name = input("Name: ")
-            age = int(input("Age: "))
-            std = input("Class: ")
-            father = input("Father: ")
-            mother = input("Mother: ")
-            location = input("Bus (near/mid/far): ")
-
-            student = service.addStudent(name, age, std, father, mother, location)
-            print("Added:", student.to_dict())
-
-        elif choice == "2":
-            break
+        match choice:
+            case 1:
+                name = input("Enter student's name => ")
+                age = int(input("Enter age => "))
+                std = input("Enter your class => ")
+                father = input("Enter your father's name => ")
+                mother = input("Enter your mother's name => ")
+                location = input("Enter location (near/mid/far) => ")
+                service.addStudent(name, age, std, father, mother, location)
+            case 3:
+                exit()
+            case _:
+                print("Invalid operation.")

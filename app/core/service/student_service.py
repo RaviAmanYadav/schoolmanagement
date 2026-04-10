@@ -9,14 +9,14 @@ class StudenetService:
         self.storage = storage
 
     def addStudent(self, name, age, std, father, mother, location):
-        student = self.storage.load()
+        students = self.storage.load()
 
-        admission_no = AdmissionService.generate_admission_no(student)
-        roll_no = AdmissionService.generate_roll_number(std, name, student)
+        admission_no = AdmissionService.generate_admission_no(students)
+        roll_no = AdmissionService.generate_roll_number(std, name, students)
         parent = Parent(father, mother)
         bus = Bus(location)
-        student = Student(admission_no, roll_no, name, age, std, parent, bus)
-        # student.append(student.to_dict())
-        self.storage.save(student.to_dict())
+        new_student = Student(admission_no, roll_no, name, age, std, parent, bus)
+        students.append(new_student.to_dict())
+        self.storage.save(students)
 
-        return student
+        return new_student
