@@ -20,3 +20,16 @@ class StudenetService:
         self.storage.save(students)
 
         return new_student
+
+    def searchStudent(self):
+        students = self.storage.load()
+        admission_no = int(input("Enter admission number => "))
+        if not admission_no:
+            print("No data present")
+            return
+        for s in students:
+            if s["admission_no"] == admission_no:
+                print(f"Student name => {s["name"]}")
+                return
+
+        print("Student Found")
