@@ -21,6 +21,12 @@ class StudenetService:
 
         return new_student
 
+    def showAllStudent(self):
+        student = self.storage.load()
+
+        for s in student:
+            print("Student's Name => ", s["name"])
+
     def searchStudent(self):
         students = self.storage.load()
         admission_no = int(input("Enter admission number => "))
@@ -30,6 +36,22 @@ class StudenetService:
         for s in students:
             if s["admission_no"] == admission_no:
                 print(f"Student name => {s["name"]}")
+                print(f"Father's name => {s["parent"]["father_name"]}")
                 return
 
         print("Student Found")
+
+    def updateStudent(self):
+        students = self.storage.load()
+        admission_no = int(input("Enter the admission number => "))
+
+        for student in students:
+            if student["admission_no"] == admission_no:
+                print("Student found!")
+
+                student["name"] = input("Enter new name => ")
+                self.storage.save(students)
+                print("Student's information has been updated successfully")
+                return
+
+        print("Admission number is not found")

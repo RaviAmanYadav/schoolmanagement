@@ -10,7 +10,8 @@ def run():
         print("1. Add students")
         print("2. Show all studentss")
         print("3. Search Student")
-        print("4. Exit")
+        print("4. Update Student details")
+        print("5. Exit")
         choice = int(input("Enter your choice => "))
 
         match choice:
@@ -23,12 +24,12 @@ def run():
                 location = input("Enter location (near/mid/far) => ")
                 service.addStudent(name, age, std, father, mother, location)
             case 2:
-                students_data = storage.load()
-                for s in students_data:
-                    print(f"Student Name => {s["name"]}")
+                service.showAllStudent()
             case 3:
                 service.searchStudent()
             case 4:
+                service.updateStudent()
+            case 5:
                 exit()
             case _:
                 print("Invalid operation.")

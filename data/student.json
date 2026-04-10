@@ -2,7 +2,7 @@
     {
         "admission_no": 1,
         "roll_no": "9-1",
-        "name": "Aman Yadav",
+        "name": "Mayank",
         "age": 15,
         "std": "9",
         "parent": {
@@ -12,6 +12,21 @@
         "bus": {
             "location": "far",
             "fee": 1500
+        }
+    },
+    {
+        "admission_no": 2,
+        "roll_no": "11-1",
+        "name": "Anchal yadav",
+        "age": 15,
+        "std": "11",
+        "parent": {
+            "father_name": "RD Yadav",
+            "mother_name": "Pushpa yadav"
+        },
+        "bus": {
+            "location": "near",
+            "fee": 500
         }
     }
 ]
