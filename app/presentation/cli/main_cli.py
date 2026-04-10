@@ -21,6 +21,11 @@ def run():
                 mother = input("Enter your mother's name => ")
                 location = input("Enter location (near/mid/far) => ")
                 service.addStudent(name, age, std, father, mother, location)
+            case 2:
+                students_data=storage.load()
+                for s in students_data:
+                    print(f"Student Name => {s["name"]}")
+
             case 3:
                 exit()
             case _:
